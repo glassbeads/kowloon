@@ -4,6 +4,7 @@ module.exports = {
       name: "kowloon",
       script: "./index.js",
       watch: ["./"],
+      restart_delay: 2000,
       ignore_watch: [
         ".git",
         "public",

@@ -20,10 +20,14 @@ const Kowloon = {
       console.log("Kowloon database connection established");
     } catch (e) {
       console.error(e);
-      process.exit(0);
+      process.exit(1);
     }
+
     let settings = await Settings.find();
-    if (settings.length === 0) await setup(); //
+    if (settings.length === 0) {
+      let setup = await import("./methods/setup.js");
+      await setup.default(); //
+    }
     settings = await Settings.find();
     settings.forEach(async (setting) => {
       this.settings[setting.name] = setting.value;

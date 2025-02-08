@@ -10,7 +10,7 @@ import {
 import { generate } from "random-words";
 
 const Kowloon = {
-  baseUrl: "http://localhost:3000/api",
+  baseUrl: "/api",
   user: JSON.parse(localStorage.getItem("user")) || {},
   request: null,
   postsStore: null,

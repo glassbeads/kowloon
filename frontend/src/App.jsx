@@ -39,7 +39,7 @@ const App = () => {
 
 const loadData = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api');
+    const response = await fetch('/api');
     const server = (await response.json()).server;
     if(server)dispatch(setLoading(false));
 

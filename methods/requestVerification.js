@@ -1,7 +1,7 @@
 import crypto from "crypto";
 import post from "./post.js";
 import User from "../schema/User.js";
-import parseID from "./parseID.js";
+import parseID from "./parseId.js";
 export default async function (id, publicKey) {
   let original = crypto.randomBytes(20).toString("hex");
   // let encrypted;
