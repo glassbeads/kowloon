@@ -65,6 +65,9 @@ A tool that makes generating local certificates easy and convenient. For real, I
 ### Setup
 You're gonna need to:
 1. Create an `.env` file. It can be generated, or created from `.env.example`.
+Passwords can be generated using e.g.
+- `pwgen -s <number of characters>`
+- `cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9-_\$@!' | fold -w <number of characters> | sed 1q`
 2. Create a wildcard certificate for the  project.  
 Once you're done with `mkcert -install`, execute `cd config/nginx/ssl && mkcert '*.kowloon.dev'`.  
 That's it! Your local wildcard certificate is ready. All `kowloon.dev` subdomains will be automatically secured with this cert.
